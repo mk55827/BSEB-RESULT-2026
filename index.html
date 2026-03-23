@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSEB Inter Result 2026 | Professional</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>BSEB Inter Result 2026 | Professional Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: 0.3s; }
         
         body {
             margin: 0;
@@ -15,139 +15,165 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
             color: white;
+            overflow: hidden;
         }
 
-        /* 1. Welcome Screen (Top Layer) */
+        /* 1. Welcome Screen */
         #welcome-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: #000;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 999;
-            transition: 0.8s ease-in-out;
+            z-index: 2000;
         }
 
         .welcome-loader {
             font-size: 2.5rem;
-            font-weight: bold;
-            letter-spacing: 4px;
-            background: linear-gradient(to right, #ffcc00, #ffffff);
+            font-weight: 800;
+            letter-spacing: 5px;
+            background: linear-gradient(45deg, #f59e0b, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: fadeIn 2s infinite alternate;
+            animation: pulse 1.5s infinite;
         }
 
-        /* 2. Main Portal Design */
-        .main-container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
+        /* 2. Main Container */
+        .main-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(15px);
             padding: 40px;
-            border-radius: 30px;
+            border-radius: 25px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             width: 90%;
-            max-width: 400px;
+            max-width: 420px;
             text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        h1 { font-size: 1.5rem; margin-bottom: 30px; color: #cbd5e1; }
+        .header-title { font-size: 1.6rem; margin-bottom: 25px; color: #f8fafc; }
+
+        .link-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
         .btn {
-            display: block;
-            width: 100%;
-            padding: 16px;
-            margin: 12px 0;
-            border: none;
+            padding: 18px;
             border-radius: 15px;
-            background: linear-gradient(135deg, #6366f1, #a855f7);
+            border: none;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             color: white;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
-            filter: brightness(1.1);
+            transform: scale(1.03);
+            filter: brightness(1.2);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
         }
 
-        /* 3. Full Screen Good Luck Overlay */
+        /* 3. Good Luck Overlay (Modern) */
         #luck-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            display: none; /* Hidden by default */
+            background: rgba(15, 23, 42, 0.98);
+            display: none;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            flex-direction: column;
+            z-index: 1500;
+            text-align: center;
         }
 
         .luck-text {
-            font-size: 4rem;
+            font-size: 4.5rem;
+            font-weight: 900;
             color: #fbbf24;
-            font-weight: 800;
-            text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
-            animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 10px;
+            animation: bounce 0.6s ease;
         }
 
-        @keyframes fadeIn { from { opacity: 0.3; } to { opacity: 1; } }
-        @keyframes zoomIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .back-btn {
+            margin-top: 30px;
+            background: transparent;
+            border: 2px solid #64748b;
+            color: #94a3b8;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .back-btn:hover { background: #64748b; color: white; }
+
+        /* Animations */
+        @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+        @keyframes bounce { 0% { transform: scale(0.5); } 100% { transform: scale(1); } }
+
     </style>
 </head>
 <body>
 
     <div id="welcome-screen">
         <div class="welcome-loader">WELCOME 2026</div>
-        <p style="color: #666; margin-top: 10px;">BSEB Result Portal Loading...</p>
     </div>
 
-    <div class="main-container">
-        <h1>BSEB Inter Result 2026</h1>
-        
-        <button class="btn" onclick="openResult('https://results.biharboardonline.com/Seniorsecondary26/')">Server Link 1 (Primary)</button>
-        <button class="btn" onclick="openResult('https://www.bsebexam.com')">Server Link 2 (Official)</button>
-        <button class="btn" onclick="openResult('https://interbiharboard.com')">Server Link 3 (Fast)</button>
-        <button class="btn" onclick="openResult('https://results.biharboardonline.com/Seniorsecondary26/')">Server Link 4 (Backup)</button>
-        
-        <p style="font-size: 0.7rem; color: #94a3b8; margin-top: 15px;">© 2026 ALL RIGHTS RESERVE BY MOHIT</p>
+    <div class="main-card">
+        <div class="header-title">BSEB Inter Result Portal</div>
+        <div class="link-box">
+            <button class="btn" onclick="openLink('https://interbiharboard.com')">Server Link 1 (Primary)</button>
+            <button class="btn" onclick="openLink('https://www.bsebexam.com')">Server Link 2 (Official)</button>
+            <button class="btn" onclick="openLink('https://results.biharboardonline.com/Seniorsecondary26/')">Server Link 3 (Fast)</button>
+            <button class="btn" onclick="openLink('https://results.biharboardonline.com/Seniorsecondary26/')">Server Link 4 (Backup)</button>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #64748b;">ALL RIGHTS RESERVE BY MOHIT</p>
     </div>
 
     <div id="luck-overlay">
         <div class="luck-text">GOOD LUCK!</div>
-        <p style="color: #94a3b8;">Checking your result...</p>
+        <p style="color: #94a3b8; font-size: 1.2rem;">Opening Result Page in a new tab...</p>
+        <button class="back-btn" onclick="closeLuck()">← Go Back to Links</button>
     </div>
 
     <script>
-        // 1. Welcome Screen Logic (3 Seconds)
-        window.addEventListener('load', () => {
+    window.addEventListener('DOMContentLoaded', () => {
+        const welcome = document.getElementById('welcome-screen');
+        
+        // चेक करें कि क्या यूजर इस बार पहली बार आया है
+        if (!sessionStorage.getItem('visited')) {
+            // पहली बार आने पर एनीमेशन दिखाएं
             setTimeout(() => {
-                const welcome = document.getElementById('welcome-screen');
                 welcome.style.opacity = '0';
-                setTimeout(() => { welcome.style.display = 'none'; }, 800);
-            }, 3000);
-        });
-
-        // 2. Logic to Show Good Luck AND Then Open Link
-        function openResult(url) {
-            // Show Good Luck Screen
-            const luck = document.getElementById('luck-overlay');
-            luck.style.display = 'flex';
-
-            // Redirect to URL after 1.5 seconds delay
-            setTimeout(() => {
-                window.location.href = url; // Change this to window.open(url, '_blank') if you want new tab
-            }, 1500);
+                setTimeout(() => {
+                    welcome.style.display = 'none';
+                    // मार्क कर दें कि वेलकम स्क्रीन दिखाई जा चुकी है
+                    sessionStorage.setItem('visited', 'true');
+                }, 800);
+            }, 2500);
+        } else {
+            // अगर पहले देख चुका है (Back button दबाने पर), तो तुरंत छुपा दें
+            welcome.style.display = 'none';
         }
-    </script>
+    });
 
+    // लिंक को उसी टैब में खोलने के लिए
+    function openLink(url) {
+        document.getElementById('luck-overlay').style.display = 'flex';
+        setTimeout(() => {
+            window.location.href = url; 
+        }, 1000);
+    }
+
+    function closeLuck() {
+        document.getElementById('luck-overlay').style.display = 'none';
+    }
+</script>
 </body>
 </html>
