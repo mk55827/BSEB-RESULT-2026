@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSEB Inter Result 2026 | Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body {
+            margin: 0;
+            background: #0f172a;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+        }
+
+        /* 1. Welcome Screen (Top Layer) */
+        #welcome-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            transition: 0.8s ease-in-out;
+        }
+
+        .welcome-loader {
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+            background: linear-gradient(to right, #ffcc00, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 2s infinite alternate;
+        }
+
+        /* 2. Main Portal Design */
+        .main-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 { font-size: 1.5rem; margin-bottom: 30px; color: #cbd5e1; }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* 3. Full Screen Good Luck Overlay */
+        #luck-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            flex-direction: column;
+        }
+
+        .luck-text {
+            font-size: 4rem;
+            color: #fbbf24;
+            font-weight: 800;
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+            animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes fadeIn { from { opacity: 0.3; } to { opacity: 1; } }
+        @keyframes zoomIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <div id="welcome-screen">
+        <div class="welcome-loader">WELCOME 2026</div>
+        <p style="color: #666; margin-top: 10px;">BSEB Result Portal Loading...</p>
+    </div>
+
+    <div class="main-container">
+        <h1>BSEB Inter Result 2026</h1>
+        
+        <button class="btn" onclick="openResult('https://results.biharboardonline.com/Seniorsecondary26/')">Server Link 1 (Primary)</button>
+        <button class="btn" onclick="openResult('https://www.bsebexam.com')">Server Link 2 (Official)</button>
+        <button class="btn" onclick="openResult('https://interbiharboard.com')">Server Link 3 (Fast)</button>
+        <button class="btn" onclick="openResult('https://results.biharboardonline.com/Seniorsecondary26/')">Server Link 4 (Backup)</button>
+        
+        <p style="font-size: 0.7rem; color: #94a3b8; margin-top: 15px;">© 2026 ALL RIGHTS RESERVE BY MOHIT</p>
+    </div>
+
+    <div id="luck-overlay">
+        <div class="luck-text">GOOD LUCK!</div>
+        <p style="color: #94a3b8;">Checking your result...</p>
+    </div>
+
+    <script>
+        // 1. Welcome Screen Logic (3 Seconds)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const welcome = document.getElementById('welcome-screen');
+                welcome.style.opacity = '0';
+                setTimeout(() => { welcome.style.display = 'none'; }, 800);
+            }, 3000);
+        });
+
+        // 2. Logic to Show Good Luck AND Then Open Link
+        function openResult(url) {
+            // Show Good Luck Screen
+            const luck = document.getElementById('luck-overlay');
+            luck.style.display = 'flex';
+
+            // Redirect to URL after 1.5 seconds delay
+            setTimeout(() => {
+                window.location.href = url; // Change this to window.open(url, '_blank') if you want new tab
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
